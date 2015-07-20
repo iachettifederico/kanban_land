@@ -12,4 +12,6 @@ group :development do
 end
 
 gem "thin", "~> 1.6.3"
-gem "roda", "~> 2.2.0"
+gem "roda", "~> 2.4.0"
+gem "ohm", "~> 2.2.1"
+gem "ohm-contrib", "~> 2.2.0"

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+Dir['./models/*.rb'].each{|f| require f}
+
+ARGV.clear
+
+Pry.start

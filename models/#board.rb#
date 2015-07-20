@@ -1,0 +1,26 @@
+require "ohm"
+require 'ohm/contrib'
+
+class Board < Ohm::Model
+  attribute :name
+  attribute :slug
+
+  index :slug
+
+  def self.create_with_slug(attrs)
+    name = attrs.fetch("name")
+    slug = attrs.fetch("slug") { name.downcase.gsub(/\W+/, "_") }
+    self.create(attrs.merge({slug: slug}))
+  end
+  
+  def to_s
+    name
+  end
+
+  def to_h
+    {
+     name: name,
+     slug: slug,
+    }
+  end
+end
