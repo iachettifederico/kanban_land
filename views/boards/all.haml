@@ -1,0 +1,5 @@
+%h1 Boards
+
+%ul
+  - boards.each do |board|
+    %li= link board, "/boards/#{board.slug}"

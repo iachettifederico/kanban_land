@@ -1,0 +1,7 @@
+%h1 The Form
+
+= Forme.form(board, action: "/boards", method: :post) do |f|
+  - f.input :name, placeholder: "Name"
+  - f.input :slug, placeholder: "Slug"
+  - f.tag :hr
+  - f.button("Save")

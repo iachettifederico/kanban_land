@@ -3,13 +3,17 @@ class RedisBoards
   def initialize(source: Board)
     @source = source
   end
+
+  def new(*args)
+    @source.new(*args)
+  end
   
   def all
     @source.all.to_a
   end
 
   def find(slug)
-    @source.find(slug: slug)
+    @source.find(slug: slug).first
   end
 
   def create(attrs)
